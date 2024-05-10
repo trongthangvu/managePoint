@@ -17,5 +17,5 @@ class ForumPostViewSet(viewsets.ModelViewSet):
     serializer_class = ForumPostSerializer
 
 class ForumCommentViewSet(viewsets.ModelViewSet):
-    queryset = ForumComment.objects.all()
+    queryset = ForumComment.objects.all().order_by('created_at')
     serializer_class = ForumCommentSerializer
