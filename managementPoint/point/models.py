@@ -10,7 +10,7 @@ class Role(models.Model):
 
 class User(AbstractUser):
     role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True, blank=True)
-    avatar = models.ImageField(upload_to="users/%Y/%m/")
+    avatar = models.ImageField(upload_to="point/static/users/%Y/%m/",null=True, blank=True)
     email_domain = models.CharField(max_length=100, null=True, blank=True)
 
 class Subject(models.Model):

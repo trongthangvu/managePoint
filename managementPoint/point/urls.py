@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from .views import SubjectViewSet, GradeViewSet, ForumPostViewSet, ForumCommentViewSet
+from .views import SubjectViewSet, GradeViewSet, ForumPostViewSet, ForumCommentViewSet,UserViewSet
 
 router = routers.DefaultRouter()
+router.register(r'users', UserViewSet, basename='user')
 router.register(r'subjects', SubjectViewSet)
 router.register(r'grades', GradeViewSet)
 router.register(r'forum-posts', ForumPostViewSet)
